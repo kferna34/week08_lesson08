@@ -13,20 +13,29 @@ namespace week08_lesson08
             int firstNumber;
             int secondNumber;
 
-            Console.WriteLine("Enter Numerator: ");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Numerator: ");
-            secondNumber = Convert.ToInt32(Console.ReadLine());
-            //~~==~~==~~==~~ method ~~==~~==~~==~~
+            try
+            {
+                Console.WriteLine("Enter Numerator: ");
+                firstNumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Numerator: ");
+                secondNumber = Convert.ToInt32(Console.ReadLine());
+                //~~==~~==~~==~~ method ~~==~~==~~==~~
 
-            Console.WriteLine("result: " + Divide(firstNumber, secondNumber));
+                Console.WriteLine("result: " + Divide(firstNumber, secondNumber));
+            }
+            catch
+            {
+
+                Console.WriteLine("invalid input");
+            }
+
 
         }
-        private static int Divide(int numerator, int denominator)
+        private static float Divide(int numerator, int denominator)
         {
             try
             {
-                int result = numerator / denominator;
+                float result = Convert.ToSingle(numerator) / Convert.ToSingle(denominator);
                 return result;
             }
             catch (Exception exception)
