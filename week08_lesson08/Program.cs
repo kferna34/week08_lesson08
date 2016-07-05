@@ -23,12 +23,16 @@ namespace week08_lesson08
 
                 Console.WriteLine("result: " + Divide(firstNumber, secondNumber));
             }
-            catch
+            catch(FormatException)
             {
 
-                Console.WriteLine("invalid input");
+                Console.WriteLine("ERROR: PLEASE ENTER AN INTEGER");
             }
-
+            catch(OverflowException)
+            {
+                Console.WriteLine("ERROR: NUMBER IS TOO LONG ");
+                Console.WriteLine("PLEASE ENTER AN INTEGER SMALLER THAN 2,147,483,647");
+            }
 
         }
         private static float Divide(int numerator, int denominator)
